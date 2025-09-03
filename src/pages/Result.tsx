@@ -4,6 +4,7 @@ import { Link } from "react-router";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import NetworkGraph from "../components/NetworkGraph";
 
 export default function Result() {
 	const reports = JSON.parse(localStorage.getItem("reports") || "[]");
@@ -99,9 +100,7 @@ export default function Result() {
 					{/* Graph Placeholder */}
 					<div className="bg-white p-6 rounded-lg shadow">
 						<h2 className="text-xl font-semibold mb-4">Visualisasi Jaringan</h2>
-						<div className="h-64 bg-gray-100 flex items-center justify-center rounded">
-							Graph jaringan akun (dummy)
-						</div>
+						<NetworkGraph />
 					</div>
 
 					{/* Actions */}

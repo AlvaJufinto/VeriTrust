@@ -2,7 +2,9 @@
 
 import { Link } from "react-router";
 
+import HomeImg from "../assets/home-1.jpg";
 import Footer from "../components/Footer";
+import StaticGraph from "../components/Graph";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
@@ -41,11 +43,7 @@ export default function Home() {
 
 					{/* Image */}
 					<div className="flex justify-center">
-						<img
-							src="https://dummyimage.com/500x350/ddd/000.png&text=AI+Network+Graph"
-							alt="Ilustrasi VeriTrust"
-							className="rounded-lg shadow-lg"
-						/>
+						<StaticGraph />
 					</div>
 				</div>
 			</section>
@@ -94,9 +92,9 @@ export default function Home() {
 						</p>
 					</div>
 					<img
-						src="https://dummyimage.com/500x350/ddd/000.png&text=Ilustrasi+Jaringan"
+						src={HomeImg}
 						alt="Ilustrasi VeriTrust"
-						className="rounded-lg shadow"
+						className="rounded-lg shadow h-128"
 					/>
 				</div>
 			</section>
