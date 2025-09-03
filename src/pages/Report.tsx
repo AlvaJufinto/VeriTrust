@@ -53,6 +53,7 @@ export default function Report() {
 						<>
 							{/* Grid Cards */}
 							<div className="grid md:grid-cols-2 gap-6">
+								{/* @ts-ignore */}
 								{reports.map((r, idx) => (
 									<div
 										key={idx}
@@ -119,6 +120,7 @@ export default function Report() {
 										</tr>
 									</thead>
 									<tbody>
+										{/* @ts-ignore */}
 										{reports.map((r, idx) => (
 											<tr key={idx} className="text-center">
 												<td className="border px-4 py-2">{r.query}</td>

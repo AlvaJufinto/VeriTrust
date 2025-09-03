@@ -105,7 +105,7 @@ export default function Dashboard() {
 								{reports
 									.slice(-3)
 									.reverse()
-									.map((r, idx) => (
+									.map((r: any, idx: any) => (
 										<li key={idx} className="py-3 flex justify-between">
 											<div>
 												<p className="font-semibold text-gray-800">{r.query}</p>
