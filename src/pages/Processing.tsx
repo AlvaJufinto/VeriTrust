@@ -12,8 +12,40 @@ export default function Processing() {
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
+			const query = localStorage.getItem("lastQuery") || "#Dummy";
+
+			// Dummy kategori
+			const categories = [
+				"Propaganda Politik",
+				"Manipulasi Isu Keamanan",
+				"Disinformasi Ekonomi",
+				"Narasi Organik",
+			];
+
+			const result = {
+				query,
+				score: Math.floor(Math.random() * 60) + 40, // 40–100
+				category: categories[Math.floor(Math.random() * categories.length)],
+				narratives: [
+					{ text: "TNI lemah menghadapi ancaman luar negeri", count: 120 },
+					{ text: "Narasi kebencian terhadap institusi X", count: 85 },
+					{ text: "Promosi hashtag #ABC123", count: 60 },
+				],
+				ringleaders: [
+					{ user: "@buzz123", note: "30x posting dalam 1 jam" },
+					{ user: "@anon456", note: "Follower growth anomali" },
+					{ user: "@spam789", note: "Retweet sinkron dengan 20 akun" },
+				],
+				date: new Date().toLocaleDateString("id-ID"),
+			};
+
+			const reports = JSON.parse(localStorage.getItem("reports") || "[]");
+			reports.push(result);
+			localStorage.setItem("reports", JSON.stringify(reports));
+
 			navigate("/result");
-		}, 3000); // 3 detik dummy loading
+		}, 3000);
+
 		return () => clearTimeout(timer);
 	}, [navigate]);
 
